@@ -1,7 +1,8 @@
 // Global site content: contact, home, about, forms, footer, legal
 
-export const LOGO_URL =
-  "https://customer-assets-m6fa6gv7.emergentagent.net/job_fe76f36c-fb31-47e4-b1c3-d1bcac6ccbb2/artifacts/x2qboysd_logo.png";
+export const LOGO_COLOR = "/logo-color.svg";
+export const LOGO_WHITE = "/logo-white.svg";
+export const LOGO_URL = "/logo-color.svg";
 
 export const CONTACT = {
   email: "hello@sbcreatives.in",

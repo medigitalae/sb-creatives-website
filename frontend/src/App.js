@@ -3,6 +3,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import SmoothScroll from "@/components/SmoothScroll";
+import ScrollProgress from "@/components/ScrollProgress";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
@@ -30,6 +31,7 @@ function App() {
       <BrowserRouter>
         <SmoothScroll>
           <ScrollToTop />
+          <ScrollProgress />
           <Navbar />
           <main>
             <Routes>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { CONTACT, FOOTER } from "../content/site";
+import { CONTACT, FOOTER, LOGO_WHITE } from "../content/site";
 import { SERVICES } from "../content/services";
 
 export default function Footer() {
@@ -30,7 +30,7 @@ export default function Footer() {
 
         <div className="grid grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pt-16">
           <div className="col-span-2 lg:col-span-4">
-            <p className="font-heading font-extrabold tracking-tighter text-3xl text-warm mb-5">SB Creatives</p>
+            <img src={LOGO_WHITE} alt="SB Creatives" className="h-16 w-auto mb-6" />
             <p className="text-warm/60 text-[15px] leading-relaxed max-w-xs">{FOOTER.description}</p>
           </div>
 

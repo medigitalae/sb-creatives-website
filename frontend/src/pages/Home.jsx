@@ -7,6 +7,7 @@ import { RevealHeading, FadeUp } from "../components/Reveal";
 import { DarkCTA, SectionHeading } from "../components/Sections";
 import ProjectCard from "../components/ProjectCard";
 import ServiceIllustration from "../components/ServiceIllustration";
+import CountUp from "../components/CountUp";
 import { SERVICES } from "../content/services";
 import { PROJECTS } from "../content/projects";
 import { HOME, HOW_WE_WORK, INDUSTRIES, STATS } from "../content/site";
@@ -82,9 +83,9 @@ function Marq() {
   return (
     <section data-testid="marquee" className="py-8 md:py-12 bg-warm border-b border-cloud overflow-hidden">
       <Marquee speed={40} gradient={false} autoFill>
-        {SERVICES.map((s) => (
+        {SERVICES.map((s, i) => (
           <div key={s.slug} className="flex items-center">
-            <span className="mx-8 font-heading font-extrabold tracking-tighter text-5xl md:text-7xl text-charcoal">{s.title}</span>
+            <span className={`mx-8 font-heading font-extrabold tracking-tighter text-5xl md:text-7xl ${i % 2 === 0 ? "text-charcoal" : "text-stroke-cadet"}`}>{s.title}</span>
             <span className="text-cadet text-4xl md:text-6xl">✦</span>
           </div>
         ))}
@@ -95,8 +96,23 @@ function Marq() {
 
 function Positioning() {
   return (
-    <section className="py-20 md:py-32 bg-warm">
-      <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-10">
+    <section className="relative py-20 md:py-32 bg-warm overflow-hidden">
+      <motion.div
+        aria-hidden
+        animate={{ rotate: 360 }}
+        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        className="pointer-events-none absolute -right-40 top-1/2 -translate-y-1/2 h-[520px] w-[520px] rounded-full border border-dashed border-cadet/25"
+      >
+        <span className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rounded-full bg-cadet" />
+        <span className="absolute top-1/2 -right-2 h-3 w-3 -translate-y-1/2 rounded-full bg-ocean" />
+      </motion.div>
+      <motion.div
+        aria-hidden
+        animate={{ rotate: -360 }}
+        transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+        className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 h-[360px] w-[360px] rounded-full border border-seafoam/50"
+      />
+      <div className="relative mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-10">
         <FadeUp className="lg:col-span-4">
           <p className="text-xs font-medium tracking-[0.2em] uppercase text-cadet">Connected by design</p>
         </FadeUp>
@@ -230,7 +246,7 @@ function Integrated() {
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6">
             {STATS.map((s) => (
               <div key={s.label}>
-                <p className="font-heading font-extrabold text-charcoal text-4xl tracking-tighter">{s.value}</p>
+                <CountUp value={s.value} className="font-heading font-extrabold text-charcoal text-4xl tracking-tighter" />
                 <p className="mt-2 text-graphite text-sm">{s.label}</p>
               </div>
             ))}

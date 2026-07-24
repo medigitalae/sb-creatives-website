@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { PageHero, DarkCTA, SectionHeading } from "../components/Sections";
 import { FadeUp } from "../components/Reveal";
+import CountUp from "../components/CountUp";
 import { ABOUT, STATS } from "../content/site";
 import { SERVICES } from "../content/services";
 
@@ -31,7 +32,7 @@ export default function About() {
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {STATS.map((s, i) => (
             <FadeUp key={s.label} delay={i * 0.06}>
-              <p className="font-heading font-extrabold text-charcoal text-5xl md:text-6xl tracking-tighter">{s.value}</p>
+              <CountUp value={s.value} className="font-heading font-extrabold text-charcoal text-5xl md:text-6xl tracking-tighter" />
               <p className="mt-3 text-graphite text-sm md:text-base">{s.label}</p>
             </FadeUp>
           ))}

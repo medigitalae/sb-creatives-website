@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { LOGO_URL } from "../content/site";
+import { LOGO_COLOR, LOGO_WHITE } from "../content/site";
 
 const LINKS = [
   { to: "/", label: "Home" },
@@ -44,11 +44,9 @@ export default function Navbar() {
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 flex items-center justify-between">
         <Link to="/" data-testid="nav-logo" className="flex items-center gap-3 group">
           <img
-            src={LOGO_URL}
+            src={onDark ? LOGO_WHITE : LOGO_COLOR}
             alt="SB Creatives"
-            className={`h-11 w-auto md:h-12 transition-all duration-300 ${
-              onDark ? "brightness-0 invert" : ""
-            }`}
+            className="h-12 w-auto md:h-14 transition-opacity duration-300"
           />
         </Link>
 
