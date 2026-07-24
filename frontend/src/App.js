@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import { Toaster } from "@/components/ui/sonner";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -17,12 +18,43 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Legal from "@/pages/Legal";
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence
+      mode="wait"
+      onExitComplete={() => {
+        if (window.lenis) {
+          window.lenis.scrollTo(0, { immediate: true });
+        } else {
+          window.scrollTo(0, 0);
+        }
+      }}
+    >
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -15 }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/work/:slug" element={<CaseStudy />} />
+          <Route path="/insights" element={<Insights />} />
+          <Route path="/insights/:slug" element={<Article />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<Legal type="privacy" />} />
+          <Route path="/terms" element={<Legal type="terms" />} />
+        </Routes>
+      </motion.div>
+    </AnimatePresence>
+  );
 }
 
 function App() {
@@ -30,23 +62,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <SmoothScroll>
-          <ScrollToTop />
           <ScrollProgress />
           <Navbar />
           <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/services/:slug" element={<ServiceDetail />} />
-              <Route path="/work" element={<Work />} />
-              <Route path="/work/:slug" element={<CaseStudy />} />
-              <Route path="/insights" element={<Insights />} />
-              <Route path="/insights/:slug" element={<Article />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/privacy-policy" element={<Legal type="privacy" />} />
-              <Route path="/terms" element={<Legal type="terms" />} />
-            </Routes>
+            <AnimatedRoutes />
           </main>
           <Footer />
         </SmoothScroll>

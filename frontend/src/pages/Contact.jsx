@@ -116,6 +116,24 @@ export default function Contact() {
                   </div>
                 </div>
               </FadeUp>
+
+              <FadeUp delay={0.4}>
+                <div className="mt-12 overflow-hidden rounded-2xl border border-cloud bg-white p-2">
+                  <div className="relative h-64 w-full overflow-hidden rounded-xl bg-cloud/30">
+                    <iframe
+                      title="Studio Location"
+                      src="https://www.google.com/maps?q=A15,+Corrazone,+Vidya+Nagar+Colony,+Kalamassery,+Kochi,+Kerala+682022,+India&output=embed"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="absolute inset-0 h-full w-full grayscale contrast-125 opacity-80 transition-all duration-500 hover:grayscale-0 hover:contrast-100 hover:opacity-100"
+                    />
+                  </div>
+                </div>
+              </FadeUp>
             </div>
 
             {/* Right — form */}

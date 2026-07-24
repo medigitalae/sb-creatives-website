@@ -49,8 +49,12 @@ export const PROJECTS = [
     tag: "Retail concept",
     excerpt:
       "A clean, modular footwear wall concept designed for premium product discovery and performance-led retail storytelling.",
-    image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
-    gallery: [],
+    image: "/works/on-wall-panel/On-Wall-Panel-1.webp",
+    gallery: [
+      "/works/on-wall-panel/On-Wall-Panel-1.webp",
+      "/works/on-wall-panel/On-Wall-Panel-2.webp",
+      "/works/on-wall-panel/On-Wall-Panel-3.webp",
+    ],
     services: [
       "Retail Concept Design",
       "Visual Merchandising",
@@ -85,8 +89,13 @@ export const PROJECTS = [
     tag: "Store concept",
     excerpt:
       "An immersive store concept celebrating football culture, fan loyalty and premium product presentation.",
-    image: "https://images.pexels.com/photos/13068364/pexels-photo-13068364.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
-    gallery: [],
+    image: "/works/al-hilal-store/AlHillalStore-1.webp",
+    gallery: [
+      "/works/al-hilal-store/AlHillalStore-1.webp",
+      "/works/al-hilal-store/AlHillalStore-2.webp",
+      "/works/al-hilal-store/AlHillalStore-3.webp",
+      "/works/al-hilal-store/AlHillalStore-4.webp",
+    ],
     services: [
       "Retail Concept Design",
       "Store Campaign Adaptation",
@@ -120,8 +129,12 @@ export const PROJECTS = [
     tag: "Landing page",
     excerpt:
       "A focused landing page presenting residential and light-commercial HVAC solutions for the regional market.",
-    image: "https://medigital.ae/wp-content/uploads/2025/03/Carrier-AC-4_3.webp",
-    gallery: ["https://medigital.ae/wp-content/uploads/2025/03/Carrier-AC-5_4-1536x1024.webp"],
+    image: "/works/carrier-ac/carrier-ac-gallery-0.webp",
+    gallery: [
+      "/works/carrier-ac/carrier-ac-gallery-0.webp",
+      "/works/carrier-ac/carrier-ac-gallery-1.webp",
+      "/works/carrier-ac/carrier-ac-gallery-2.webp",
+    ],
     services: ["Web Design", "UI/UX Design", "Landing Page", "Content Structure"],
     overview:
       "Carrier needed a clear digital destination to present residential and light-commercial HVAC solutions to a regional audience, with a structure that made product ranges easy to understand.",
@@ -148,8 +161,12 @@ export const PROJECTS = [
     tag: "E-commerce platform",
     excerpt:
       "A luxury short-stay booking platform connected to property availability, payments and operational systems.",
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
-    gallery: [],
+    image: "/works/nox-dubai/nox-dubai-gallery-0.webp",
+    gallery: [
+      "/works/nox-dubai/nox-dubai-gallery-0.webp",
+      "/works/nox-dubai/nox-dubai-gallery-1.webp",
+      "/works/nox-dubai/nox-dubai-gallery-2.webp",
+    ],
     services: [
       "E-commerce",
       "UI/UX Design",
@@ -184,8 +201,12 @@ export const PROJECTS = [
     tag: "Restaurant website",
     excerpt:
       "A contemporary restaurant website with a filterable menu, brand storytelling and direct reservation journeys.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
-    gallery: [],
+    image: "/works/zafran/zafran-indian-bistro-gallery-0.webp",
+    gallery: [
+      "/works/zafran/zafran-indian-bistro-gallery-0.webp",
+      "/works/zafran/zafran-indian-bistro-gallery-1.webp",
+      "/works/zafran/zafran-indian-bistro-gallery-2.webp",
+    ],
     services: ["UI/UX Design", "Web Design", "Menu Experience", "Booking Integration"],
     overview:
       "Zafran Indian Bistro is a contemporary Indian restaurant known for North West Indian cuisine and a modern dining experience. The website needed to reflect the character of the brand while making menus, locations and reservations easier to access.",
@@ -213,8 +234,13 @@ export const PROJECTS = [
     tag: "Packaging system",
     excerpt:
       "A refined packaging system for an artisanal chocolate brand built around gifting and premium presentation.",
-    image: "https://images.pexels.com/photos/66234/praline-chocolates-chocolate-chocolatier-66234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
-    gallery: [],
+    image: "/works/blu-chocolates/blu-chocolates-gallery-0.webp",
+    gallery: [
+      "/works/blu-chocolates/blu-chocolates-gallery-0.webp",
+      "/works/blu-chocolates/blu-chocolates-gallery-1.webp",
+      "/works/blu-chocolates/blu-chocolates-gallery-2.webp",
+      "/works/blu-chocolates/BluBar-Mockup%20Large.webp",
+    ],
     services: ["Packaging Design", "Brand Application", "Print Artwork", "Gift Packaging"],
     overview:
       "Blu Chocolates is an artisanal chocolatier focused on premium chocolate assortments, gifting and corporate occasions. The packaging needed to express craft, quality and a sense of occasion across different products and formats.",
@@ -271,8 +297,12 @@ export const PROJECTS = [
     tag: "Real estate website",
     excerpt:
       "A premium real estate website presenting smart-home residences through clear property storytelling and enquiry journeys.",
-    image: "https://images.pexels.com/photos/34159010/pexels-photo-34159010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
-    gallery: [],
+    image: "/works/refine-dubai/refine-gallery-0.webp",
+    gallery: [
+      "/works/refine-dubai/refine-gallery-0.webp",
+      "/works/refine-dubai/refine-gallery-1.webp",
+      "/works/refine-dubai/refine-gallery-2.webp",
+    ],
     services: ["Web Design", "UI/UX Design", "Property Storytelling", "Lead Enquiry Design"],
     overview:
       "Refine required a digital platform for premium residential developments. The website needed to present the developer as design-led while giving each property enough space to communicate its own location, lifestyle and smart-home features.",
@@ -300,8 +330,12 @@ export const PROJECTS = [
     tag: "Restaurant website",
     excerpt:
       "A warm, user-friendly restaurant website with a filterable menu and integrated booking experience.",
-    image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
-    gallery: [],
+    image: "/works/carluccious/carluccios-gallery-0.webp",
+    gallery: [
+      "/works/carluccious/carluccios-gallery-0.webp",
+      "/works/carluccious/carluccios-gallery-1.webp",
+      "/works/carluccious/carluccios-gallery-2.webp",
+    ],
     services: ["UI/UX Design", "Web Design", "Menu Experience", "Booking Integration"],
     overview:
       "Carluccio's is an Italian casual dining brand known for approachable food, warm hospitality and a family-friendly atmosphere. The website needed to carry that experience online while making menus and reservations easier to access.",

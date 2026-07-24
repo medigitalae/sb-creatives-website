@@ -319,11 +319,11 @@ export const OFFERING_IMAGES = {
     U("1559028012-481c04fa702d"),
   ],
   "retail-spatial-design": [
-    U("1441986300917-64674bd600d8"),
+    "/services/retail-concept-design.webp",
     U("1567401893414-76b7b1e5a7a5"),
-    U("1519415387722-a1c3bbef716c"),
-    U("1540575467063-178a50c2df87"),
-    U("1497366216548-37526070297c"),
+    "/services/window-displays.webp",
+    "/services/brand-activation.webp",
+    "/services/spatial-branding.webp",
     U("1565043666747-69f6646db940"),
   ],
   "print-merchandise": [
@@ -335,12 +335,12 @@ export const OFFERING_IMAGES = {
     U("1513475382585-d06e58bcb0e0"),
   ],
   "3d-printing-solutions": [
-    U("1591799264318-7e6ef8ddb7ea"),
-    U("1610375461246-83df859d849d"),
-    U("1570125909232-eb263c188f7e"),
-    U("1581093588401-fbb62a02f120"),
-    U("1513475382585-d06e58bcb0e0"),
-    U("1518770660439-4636190af475"),
+    "/services/rapid-prototyping.webp",
+    "/services/product-functional-models.webp",
+    "/services/architectural-scale-models.webp",
+    "/services/large-format-printing.webp",
+    "/services/custom-awards.webp",
+    "/services/low-volume-production.webp",
   ],
 };
 

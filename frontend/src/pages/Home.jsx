@@ -5,6 +5,7 @@ import Marquee from "react-fast-marquee";
 import { ArrowUpRight, ArrowRight, Layers } from "lucide-react";
 import { RevealHeading, FadeUp } from "../components/Reveal";
 import { DarkCTA, SectionHeading } from "../components/Sections";
+import ScrollTextReveal from "../components/ScrollTextReveal";
 import ProjectCard from "../components/ProjectCard";
 import ServiceIllustration from "../components/ServiceIllustration";
 import CountUp from "../components/CountUp";
@@ -177,11 +178,12 @@ function Positioning() {
         <FadeUp className="lg:col-span-4">
           <p className="text-xs font-medium tracking-[0.2em] uppercase text-cadet">Connected by design</p>
         </FadeUp>
-        <FadeUp delay={0.1} className="lg:col-span-8">
-          <p className="font-heading font-semibold text-charcoal text-2xl md:text-4xl leading-snug tracking-tight">
-            {HOME.positioningBody}
-          </p>
-        </FadeUp>
+        <div className="lg:col-span-8">
+          <ScrollTextReveal 
+            text={HOME.positioningBody} 
+            className="font-heading font-semibold text-charcoal text-2xl md:text-4xl leading-snug tracking-tight"
+          />
+        </div>
       </div>
     </section>
   );
