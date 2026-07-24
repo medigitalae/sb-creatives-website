@@ -4,6 +4,7 @@ import { Check, ArrowUpRight } from "lucide-react";
 import { PageHero, DarkCTA } from "../components/Sections";
 import { FadeUp } from "../components/Reveal";
 import ServiceIllustration from "../components/ServiceIllustration";
+import RelatedWork from "../components/RelatedWork";
 import { getService, SERVICES } from "../content/services";
 
 export default function ServiceDetail() {
@@ -109,6 +110,9 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {/* Related work for this service */}
+      <RelatedWork serviceSlug={service.slug} eyebrow="Related work" title="Selected work in this service" />
 
       <DarkCTA title={service.ctaTitle} body={service.ctaBody} label={service.ctaLabel} />
     </div>

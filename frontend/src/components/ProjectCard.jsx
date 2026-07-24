@@ -51,7 +51,6 @@ export default function ProjectCard({ project, className = "", index = 0 }) {
             </h3>
             <p className="text-graphite text-sm mt-1">{project.tag} · {project.client}</p>
           </div>
-          <span className="text-graphite text-sm font-medium shrink-0">{project.year}</span>
         </div>
       </Link>
     </motion.div>

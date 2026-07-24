@@ -41,3 +41,15 @@ Award-worthy, modern marketing site for SB Creatives Pvt. Ltd (creative, digital
 - P1: Admin auth + dashboard to view enquiries (GET /api/contact is currently public — restrict before launch).
 - P2: Replace stock imagery with approved client project photography; real gallery per case study.
 - P2: Per-route SEO meta/OG, sitemap; wire email notifications (Resend) for new enquiries.
+
+## Update (2026-07-24) — Cross-linking, galleries, hero/footer redesign
+- Works <-> Services cross-linked: added RelatedWork component. Service detail pages show "Selected work in this service"; case study pages show "More in this service" (excludes current). Projects tagged with serviceSlug; getProjectsByService() helper.
+- Removed year from all work displays (cards + case study).
+- Added conditional case-study image gallery (data-testid=case-study-gallery); hidden when gallery array empty.
+- Home hero redesigned: floating shapes, animated sparkles, rotating CircularText badge, mouse-parallax layers (posh/modern) on top of existing grid + moving gradients.
+- Footer redesigned (funky): rotating badge with logo mark, animated underline links, "Back to top", giant outlined marquee wordmark.
+
+## KNOWN BLOCKER — project imagery
+- medigital.ae assets are behind Cloudflare bot protection + a hard CAPTCHA. Hotlinking fails for visitors and automated download is blocked (only PUMA speedcat-hero.webp was retrieved and is hosted at /frontend/public/works/).
+- All other projects currently use STOCK placeholder images (some thematically off, e.g. Carrier shows a shoe). Galleries are empty.
+- ACTION NEEDED: client to upload the real .webp project images (chat attachments support webp) so they can be hosted locally at /works/ and wired into image + gallery per project in src/content/projects.js.

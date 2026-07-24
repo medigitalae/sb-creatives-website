@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 import { ArrowUpRight, ArrowRight, Layers } from "lucide-react";
@@ -8,6 +8,7 @@ import { DarkCTA, SectionHeading } from "../components/Sections";
 import ProjectCard from "../components/ProjectCard";
 import ServiceIllustration from "../components/ServiceIllustration";
 import CountUp from "../components/CountUp";
+import CircularText from "../components/CircularText";
 import { SERVICES } from "../content/services";
 import { PROJECTS } from "../content/projects";
 import { HOME, HOW_WE_WORK, INDUSTRIES, STATS } from "../content/site";
@@ -21,8 +22,42 @@ function DarkHero() {
   const textY = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
+  // Mouse parallax
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const sx = useSpring(mx, { stiffness: 60, damping: 20 });
+  const sy = useSpring(my, { stiffness: 60, damping: 20 });
+  const p1x = useTransform(sx, [-0.5, 0.5], [-30, 30]);
+  const p1y = useTransform(sy, [-0.5, 0.5], [-24, 24]);
+  const p2x = useTransform(sx, [-0.5, 0.5], [24, -24]);
+  const p2y = useTransform(sy, [-0.5, 0.5], [18, -18]);
+  const p3x = useTransform(sx, [-0.5, 0.5], [-14, 14]);
+
+  const onMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    mx.set((e.clientX - rect.left) / rect.width - 0.5);
+    my.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
+
+  const Sparkle = ({ className, size = 24, delay = 0 }) => (
+    <motion.span
+      aria-hidden
+      className={`absolute text-cadet ${className}`}
+      style={{ fontSize: size }}
+      animate={{ rotate: [0, 90, 0], opacity: [0.5, 1, 0.5] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay }}
+    >
+      ✦
+    </motion.span>
+  );
+
   return (
-    <section ref={ref} data-testid="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-midnight text-warm">
+    <section
+      ref={ref}
+      data-testid="hero"
+      onMouseMove={onMove}
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-midnight text-warm grain"
+    >
       {/* Grid lines */}
       <div className="absolute inset-0 hero-grid" />
       {/* Moving gradient blobs */}
@@ -30,6 +65,26 @@ function DarkHero() {
         <div className="blob-1 absolute top-[-10%] right-[5%] h-[500px] w-[500px] rounded-full bg-cadet/25 blur-[120px]" />
         <div className="blob-2 absolute bottom-[-15%] left-[-5%] h-[460px] w-[460px] rounded-full bg-ocean/25 blur-[120px]" />
         <div className="absolute top-[30%] left-[40%] h-[300px] w-[300px] rounded-full bg-seafoam/10 blur-[100px]" />
+      </div>
+
+      {/* Floating decorative shapes (mouse parallax) */}
+      <motion.div style={{ x: p1x, y: p1y }} className="pointer-events-none absolute top-[18%] right-[12%] hidden md:block">
+        <div className="h-24 w-24 rounded-full border border-cadet/40" />
+      </motion.div>
+      <motion.div style={{ x: p2x, y: p2y }} className="pointer-events-none absolute bottom-[24%] right-[26%] hidden md:block">
+        <div className="h-4 w-4 rounded-full bg-cadet" />
+      </motion.div>
+      <motion.div style={{ x: p3x }} className="pointer-events-none absolute top-[30%] left-[6%] hidden lg:block">
+        <div className="h-16 w-16 rounded-2xl border border-white/15 rotate-12" />
+      </motion.div>
+      <Sparkle className="top-[24%] left-[46%] hidden md:block" size={20} />
+      <Sparkle className="bottom-[30%] left-[14%] hidden md:block" size={28} delay={1.5} />
+      <Sparkle className="top-[16%] right-[38%] hidden lg:block" size={16} delay={3} />
+
+      {/* Rotating badge */}
+      <div className="pointer-events-none absolute bottom-[16%] right-[8%] hidden lg:flex items-center justify-center">
+        <CircularText className="text-cadet/70" size={128} text="SB CREATIVES · CREATIVE · DIGITAL · RETAIL · PRINT · 3D · " />
+        <span className="absolute h-3 w-3 rounded-full bg-cadet" />
       </div>
 
       <motion.div style={{ y: textY, opacity: fade }} className="relative mx-auto max-w-[1600px] w-full px-6 md:px-12 lg:px-16 pt-32 pb-20">
@@ -72,7 +127,13 @@ function DarkHero() {
       <div className="relative border-t border-white/10">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 py-5 flex items-center justify-between">
           <span className="text-warm/50 text-sm">{HOME.supportLine}</span>
-          <span className="hidden md:block text-warm/40 text-xs tracking-[0.2em] uppercase">Scroll to explore</span>
+          <motion.span
+            className="hidden md:block text-warm/40 text-xs tracking-[0.2em] uppercase"
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            Scroll to explore
+          </motion.span>
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { FadeUp } from "../components/Reveal";
 import { DarkCTA } from "../components/Sections";
+import RelatedWork from "../components/RelatedWork";
 import { getProject, PROJECTS, FALLBACK_IMAGE } from "../content/projects";
 
 export default function CaseStudy() {
@@ -31,7 +32,6 @@ export default function CaseStudy() {
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span className="rounded-full bg-seafoam/50 px-4 py-1.5 text-xs font-medium text-midnight">{project.category}</span>
             <span className="text-graphite text-sm">{project.tag}</span>
-            <span className="text-graphite text-sm">· {project.year}</span>
           </div>
           <FadeUp>
             <h1 className="font-heading font-extrabold tracking-tighter text-charcoal text-5xl md:text-7xl leading-[0.95] max-w-4xl">{project.title}</h1>
@@ -107,6 +107,47 @@ export default function CaseStudy() {
           </div>
         </div>
       </section>
+
+      {/* Gallery */}
+      {(() => {
+        const galleryImages = (project.gallery || []).filter((g) => g !== project.image);
+        if (galleryImages.length === 0) return null;
+        return (
+          <section data-testid="case-study-gallery" className="py-8 md:py-12 bg-warm">
+            <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16">
+              <FadeUp>
+                <p className="text-xs font-medium tracking-[0.2em] uppercase text-cadet mb-8">Project gallery</p>
+              </FadeUp>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {galleryImages.map((src, i) => (
+                  <motion.div
+                    key={src}
+                    data-testid={`gallery-image-${i}`}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: (i % 2) * 0.08 }}
+                    className={`group relative overflow-hidden rounded-2xl border border-cloud bg-cloud/40 ${
+                      galleryImages.length % 2 !== 0 && i === galleryImages.length - 1 ? "md:col-span-2" : ""
+                    }`}
+                  >
+                    <img
+                      src={src}
+                      alt={`${project.title} — view ${i + 1}`}
+                      loading="lazy"
+                      onError={(e) => { if (e.currentTarget.src !== FALLBACK_IMAGE) e.currentTarget.src = FALLBACK_IMAGE; }}
+                      className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* Related work by service */}
+      <RelatedWork serviceSlug={project.serviceSlug} excludeSlug={project.slug} eyebrow="More in this service" />
 
       {/* Next project */}
       <section className="pb-4 bg-warm">

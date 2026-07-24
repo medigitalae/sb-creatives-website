@@ -9,12 +9,12 @@ export const PROJECTS = [
     title: "PUMA SpeedCat",
     client: "PUMA",
     category: "Retail & Spatial",
-    year: "2024",
+    serviceSlug: "retail-spatial-design",
     tag: "Retail campaign",
     excerpt:
       "A multi-store retail campaign that translated SpeedCat's motorsport heritage into a contemporary streetwear experience.",
-    image:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
+    image: "/works/speedcat-hero.webp",
+    gallery: [],
     services: [
       "Campaign Creative",
       "Retail Concept Design",
@@ -45,12 +45,12 @@ export const PROJECTS = [
     title: "On Cloud Footwear Wall Concept",
     client: "On",
     category: "Retail & Spatial",
-    year: "2024",
+    serviceSlug: "retail-spatial-design",
     tag: "Retail concept",
     excerpt:
       "A clean, modular footwear wall concept designed for premium product discovery and performance-led retail storytelling.",
-    image:
-      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
+    image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
+    gallery: [],
     services: [
       "Retail Concept Design",
       "Visual Merchandising",
@@ -81,12 +81,12 @@ export const PROJECTS = [
     title: "Al Hilal X PUMA Store Concept",
     client: "Al Hilal X PUMA",
     category: "Retail & Spatial",
-    year: "2024",
+    serviceSlug: "retail-spatial-design",
     tag: "Store concept",
     excerpt:
       "An immersive store concept celebrating football culture, fan loyalty and premium product presentation.",
-    image:
-      "https://images.pexels.com/photos/13068364/pexels-photo-13068364.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+    image: "https://images.pexels.com/photos/13068364/pexels-photo-13068364.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+    gallery: [],
     services: [
       "Retail Concept Design",
       "Store Campaign Adaptation",
@@ -116,12 +116,12 @@ export const PROJECTS = [
     title: "Carrier AC",
     client: "Carrier",
     category: "Digital & Web",
-    year: "2023",
+    serviceSlug: "digital-web",
     tag: "Landing page",
     excerpt:
       "A focused landing page presenting residential and light-commercial HVAC solutions for the regional market.",
-    image:
-      "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
+    image: "https://medigital.ae/wp-content/uploads/2025/03/Carrier-AC-4_3.webp",
+    gallery: ["https://medigital.ae/wp-content/uploads/2025/03/Carrier-AC-5_4-1536x1024.webp"],
     services: ["Web Design", "UI/UX Design", "Landing Page", "Content Structure"],
     overview:
       "Carrier needed a clear digital destination to present residential and light-commercial HVAC solutions to a regional audience, with a structure that made product ranges easy to understand.",
@@ -144,12 +144,12 @@ export const PROJECTS = [
     title: "NOX Dubai",
     client: "NOX Dubai",
     category: "Digital & Web",
-    year: "2024",
+    serviceSlug: "digital-web",
     tag: "E-commerce platform",
     excerpt:
       "A luxury short-stay booking platform connected to property availability, payments and operational systems.",
-    image:
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
+    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
+    gallery: [],
     services: [
       "E-commerce",
       "UI/UX Design",
@@ -180,12 +180,12 @@ export const PROJECTS = [
     title: "Zafran Indian Bistro",
     client: "Zafran",
     category: "Digital & Web",
-    year: "2023",
+    serviceSlug: "digital-web",
     tag: "Restaurant website",
     excerpt:
       "A contemporary restaurant website with a filterable menu, brand storytelling and direct reservation journeys.",
-    image:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
+    gallery: [],
     services: ["UI/UX Design", "Web Design", "Menu Experience", "Booking Integration"],
     overview:
       "Zafran Indian Bistro is a contemporary Indian restaurant known for North West Indian cuisine and a modern dining experience. The website needed to reflect the character of the brand while making menus, locations and reservations easier to access.",
@@ -209,12 +209,12 @@ export const PROJECTS = [
     title: "Blu Chocolates",
     client: "Blu",
     category: "Brand & Packaging",
-    year: "2024",
+    serviceSlug: "brand-creative",
     tag: "Packaging system",
     excerpt:
       "A refined packaging system for an artisanal chocolate brand built around gifting and premium presentation.",
-    image:
-      "https://images.pexels.com/photos/66234/praline-chocolates-chocolate-chocolatier-66234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+    image: "https://images.pexels.com/photos/66234/praline-chocolates-chocolate-chocolatier-66234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+    gallery: [],
     services: ["Packaging Design", "Brand Application", "Print Artwork", "Gift Packaging"],
     overview:
       "Blu Chocolates is an artisanal chocolatier focused on premium chocolate assortments, gifting and corporate occasions. The packaging needed to express craft, quality and a sense of occasion across different products and formats.",
@@ -238,12 +238,12 @@ export const PROJECTS = [
     title: "Geely Auto",
     client: "Geely",
     category: "Print & Collateral",
-    year: "2023",
+    serviceSlug: "print-merchandise",
     tag: "Print system",
     excerpt:
       "Bilingual warranty and maintenance booklets designed for clarity, brand consistency and everyday ownership use.",
-    image:
-      "https://images.pexels.com/photos/18320398/pexels-photo-18320398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+    image: "https://images.pexels.com/photos/18320398/pexels-photo-18320398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+    gallery: [],
     services: ["Brand Application", "Print Graphics", "Bilingual Layout Design", "Production Artwork"],
     overview:
       "The project required warranty and maintenance booklets for Geely vehicles. The documents had to align with Geely's global brand identity while remaining practical for everyday use by vehicle owners and service teams.",
@@ -267,12 +267,12 @@ export const PROJECTS = [
     title: "Refine",
     client: "Refine",
     category: "Digital & Web",
-    year: "2023",
+    serviceSlug: "digital-web",
     tag: "Real estate website",
     excerpt:
       "A premium real estate website presenting smart-home residences through clear property storytelling and enquiry journeys.",
-    image:
-      "https://images.pexels.com/photos/34159010/pexels-photo-34159010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+    image: "https://images.pexels.com/photos/34159010/pexels-photo-34159010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+    gallery: [],
     services: ["Web Design", "UI/UX Design", "Property Storytelling", "Lead Enquiry Design"],
     overview:
       "Refine required a digital platform for premium residential developments. The website needed to present the developer as design-led while giving each property enough space to communicate its own location, lifestyle and smart-home features.",
@@ -296,12 +296,12 @@ export const PROJECTS = [
     title: "Carluccio's",
     client: "Carluccio's",
     category: "Digital & Web",
-    year: "2023",
+    serviceSlug: "digital-web",
     tag: "Restaurant website",
     excerpt:
       "A warm, user-friendly restaurant website with a filterable menu and integrated booking experience.",
-    image:
-      "https://images.unsplash.com/photo-1552566626-52f8b828add9?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
+    image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
+    gallery: [],
     services: ["UI/UX Design", "Web Design", "Menu Experience", "Booking Integration"],
     overview:
       "Carluccio's is an Italian casual dining brand known for approachable food, warm hospitality and a family-friendly atmosphere. The website needed to carry that experience online while making menus and reservations easier to access.",
@@ -331,3 +331,5 @@ export const WORK_FILTERS = [
 ];
 
 export const getProject = (slug) => PROJECTS.find((p) => p.slug === slug);
+export const getProjectsByService = (serviceSlug) =>
+  PROJECTS.filter((p) => p.serviceSlug === serviceSlug);
