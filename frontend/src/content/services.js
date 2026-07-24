@@ -297,4 +297,51 @@ export const SERVICES = [
   },
 ];
 
+const U = (id) =>
+  `https://images.unsplash.com/photo-${id}?crop=entropy&cs=srgb&fm=jpg&q=80&w=900&auto=format&fit=crop`;
+
+// Stock photo per offering (order matches each service's offerings array)
+export const OFFERING_IMAGES = {
+  "brand-creative": [
+    U("1626785774573-4b799315345d"),
+    U("1499750310107-5fef28a66643"),
+    U("1607083206968-13611e3d76db"),
+    U("1452587925148-ce544e77e70d"),
+    U("1574717024653-61fd2cf4d44d"),
+    U("1633356122544-f134324a6cee"),
+  ],
+  "digital-web": [
+    U("1611162617213-7d7a39e9b1d7"),
+    U("1460925895917-afdab827c52f"),
+    U("1432888622747-4eb9a8efeb07"),
+    U("1596526131083-e8c633c948d2"),
+    U("1547658719-da2b51169166"),
+    U("1559028012-481c04fa702d"),
+  ],
+  "retail-spatial-design": [
+    U("1441986300917-64674bd600d8"),
+    U("1567401893414-76b7b1e5a7a5"),
+    U("1519415387722-a1c3bbef716c"),
+    U("1540575467063-178a50c2df87"),
+    U("1497366216548-37526070297c"),
+    U("1565043666747-69f6646db940"),
+  ],
+  "print-merchandise": [
+    U("1611532736597-de2d4265fba3"),
+    U("1519389950473-47ba0277781c"),
+    U("1586281380349-632531db7ed4"),
+    U("1513885535751-8b9238bd345a"),
+    U("1489987707025-afc232f7ea0f"),
+    U("1513475382585-d06e58bcb0e0"),
+  ],
+  "3d-printing-solutions": [
+    U("1591799264318-7e6ef8ddb7ea"),
+    U("1610375461246-83df859d849d"),
+    U("1570125909232-eb263c188f7e"),
+    U("1581093588401-fbb62a02f120"),
+    U("1513475382585-d06e58bcb0e0"),
+    U("1518770660439-4636190af475"),
+  ],
+};
+
 export const getService = (slug) => SERVICES.find((s) => s.slug === slug);

@@ -5,7 +5,7 @@ import { PageHero, DarkCTA } from "../components/Sections";
 import { FadeUp } from "../components/Reveal";
 import ServiceIllustration from "../components/ServiceIllustration";
 import RelatedWork from "../components/RelatedWork";
-import { getService, SERVICES } from "../content/services";
+import { getService, SERVICES, OFFERING_IMAGES } from "../content/services";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -55,16 +55,30 @@ export default function ServiceDetail() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {service.offerings.map((o, i) => (
               <FadeUp key={o.title} delay={(i % 2) * 0.08}>
-                <div className="h-full rounded-2xl border border-cloud bg-warm p-8 transition-colors duration-300 hover:border-cadet">
-                  <h3 className="font-heading font-bold text-charcoal text-xl md:text-2xl">{o.title}</h3>
-                  <p className="mt-3 text-graphite text-[15px] leading-relaxed">{o.body}</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {o.outputs.map((out) => (
-                      <span key={out} className="inline-flex items-center gap-1.5 rounded-full bg-seafoam/40 px-3 py-1.5 text-xs font-medium text-midnight">
-                        <Check size={12} className="text-ocean" />
-                        {out}
-                      </span>
-                    ))}
+                <div className="group h-full overflow-hidden rounded-2xl border border-cloud bg-warm transition-colors duration-300 hover:border-cadet">
+                  <div className="relative aspect-[16/9] overflow-hidden bg-cloud/60">
+                    <img
+                      src={(OFFERING_IMAGES[service.slug] || [])[i]}
+                      alt={o.title}
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-midnight/30 to-transparent" />
+                  </div>
+                  <div className="p-8">
+                    <h3 className="font-heading font-bold text-charcoal text-xl md:text-2xl">{o.title}</h3>
+                    <p className="mt-3 text-graphite text-[15px] leading-relaxed">{o.body}</p>
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {o.outputs.map((out) => (
+                        <span key={out} className="inline-flex items-center gap-1.5 rounded-full bg-seafoam/40 px-3 py-1.5 text-xs font-medium text-midnight">
+                          <Check size={12} className="text-ocean" />
+                          {out}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </FadeUp>
