@@ -34,13 +34,13 @@ function Digital() {
       <rect x="34" y="46" width="132" height="90" rx="12" fill="#24333B" />
       <rect x="34" y="46" width="132" height="22" rx="12" fill="#36454F" />
       <circle cx="47" cy="57" r="3" fill="#5FC6CA" />
-      <motion.rect x="48" y="82" width="60" height="8" rx="4" fill="#5FC6CA"
+      <motion.rect x="48" y="82" width="60" height="8" rx="4" fill="#5FC6CA" initial={{ width: 30 }}
         animate={{ width: [30, 70, 30] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} />
       <rect x="48" y="98" width="90" height="6" rx="3" fill="#3E9FA4" opacity="0.6" />
       <rect x="48" y="110" width="70" height="6" rx="3" fill="#6F7F86" opacity="0.5" />
       <rect x="70" y="140" width="60" height="10" rx="4" fill="#36454F" />
       {[0, 1, 2, 3].map((i) => (
-        <motion.circle key={i} cx={54 + i * 30} cy={128} r="0" fill="#5FC6CA"
+        <motion.circle key={i} cx={54 + i * 30} cy={128} r="0" fill="#5FC6CA" initial={{ r: 0 }}
           animate={{ r: [0, 4, 0] }} transition={{ duration: 1.8, repeat: Infinity, delay: i * 0.25 }} />
       ))}
     </svg>
@@ -92,7 +92,7 @@ function Print3D() {
         <path d="M100 60 L134 80 L100 100 L66 80 Z" fill="#5FC6CA" />
         <path d="M100 100 L134 80 V120 L100 140 Z" fill="#24333B" opacity="0.85" />
       </motion.g>
-      <motion.line x1="52" y1="46" x2="148" y2="46" stroke="#5FC6CA" strokeWidth="3" strokeLinecap="round"
+      <motion.line x1="52" y1="46" x2="148" y2="46" stroke="#5FC6CA" strokeWidth="3" strokeLinecap="round" initial={{ x1: 52, x2: 148 }}
         animate={{ x1: [52, 148, 52], x2: [148, 52, 148] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} />
       <rect x="46" y="40" width="8" height="120" rx="3" fill="#36454F" />
       <rect x="146" y="40" width="8" height="120" rx="3" fill="#36454F" />

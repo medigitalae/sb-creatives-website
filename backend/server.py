@@ -25,6 +25,13 @@ app = FastAPI(title="SB Creatives API")
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
+# Configure logging early so it is available to all routes
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
 
 # ---------- Models ----------
 class StatusCheck(BaseModel):
@@ -93,6 +100,8 @@ async def get_status_checks():
 
 @api_router.post("/contact", response_model=Contact)
 async def create_contact(payload: ContactCreate):
+    if not payload.consent:
+        raise HTTPException(status_code=400, detail="Consent is required to submit an enquiry.")
     contact = Contact(**payload.model_dump())
     await db.contacts.insert_one(contact.model_dump())
     logger.info(f"New contact enquiry from {contact.email} ({contact.service})")
@@ -115,12 +124,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 
 @app.on_event("shutdown")
