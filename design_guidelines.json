@@ -1,0 +1,161 @@
+{
+  "project_name": "SB Creatives",
+  "theme_strategy": "light-warm-white-editorial",
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "Manrope, sans-serif",
+        "weights": ["600", "700", "800"],
+        "usage": "Headings, massive text, stylized numbers, buttons."
+      },
+      "body": {
+        "family": "Inter, sans-serif",
+        "weights": ["400", "500", "600"],
+        "usage": "Paragraphs, labels, navigation, secondary text."
+      }
+    },
+    "scale": {
+      "h1": "text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.95]",
+      "h2": "text-4xl md:text-5xl font-bold tracking-tight leading-tight",
+      "h3": "text-2xl md:text-3xl font-semibold leading-snug",
+      "body": "text-base md:text-lg font-normal leading-relaxed",
+      "label": "text-xs md:text-sm font-medium tracking-wide uppercase"
+    },
+    "rules": [
+      "Headings must use sentence case, never all caps unless it's a tiny label.",
+      "Avoid decorative fonts.",
+      "Use extremely tight line-heights (leading-none) for massive headings.",
+      "Apply line-by-line overflow hidden text reveal animations for big headers."
+    ]
+  },
+  "colors": {
+    "css_variables": {
+      "--color-deep-charcoal": "#36454F",
+      "--color-cadet-blue": "#5FC6CA",
+      "--color-midnight-slate": "#24333B",
+      "--color-ocean-teal": "#3E9FA4",
+      "--color-seafoam": "#B8E3E1",
+      "--color-cloud-grey": "#E8EEEE",
+      "--color-warm-white": "#F7F9F8",
+      "--color-graphite": "#6F7F86"
+    },
+    "usage": {
+      "background_primary": "var(--color-warm-white)",
+      "background_dark_sections": "var(--color-midnight-slate)",
+      "text_primary_light_theme": "var(--color-deep-charcoal)",
+      "text_secondary_light_theme": "var(--color-graphite)",
+      "text_primary_dark_theme": "var(--color-warm-white)",
+      "accent_interactive": "var(--color-cadet-blue)",
+      "accent_hover": "var(--color-ocean-teal)",
+      "borders": "var(--color-cloud-grey)"
+    }
+  },
+  "spacing_system": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-20 md:py-32",
+    "element_gap": "gap-8 md:gap-12"
+  },
+  "visual_enhancers": {
+    "cards": "Subtle border (1px solid var(--color-cloud-grey)), background var(--color-warm-white) or white. VERY subtle or NO shadow. Rounded-2xl.",
+    "borders": "Use borders for structure (Swiss-style thin lines) instead of drop shadows.",
+    "shapes": "Use circular framed images or rounded pill badges for categories.",
+    "gradients": "Avoid heavy gradients. If teal is used, make it flat or a very subtle radial blur behind elements.",
+    "image_treatment": "Deliberate spotlights, clipped frames (rounded-2xl with overflow-hidden). Images in portfolio should have a 1px border."
+  },
+  "grids_and_layouts": {
+    "spacing": "Generous whitespace. Use py-24 to py-32 for section vertical padding. Use gap-8 or gap-12 in grids.",
+    "portfolio_grid": "Bento or asymmetric masonry grid. Mix col-span-1 and col-span-2 layouts to create tension. Never perfectly symmetrical.",
+    "alignment": "Opt for left-aligned text for paragraphs and headings, except in specialized central manifestos."
+  },
+  "motion_and_interactions": {
+    "scroll": "Lenis smooth scroll is MANDATORY for momentum scrolling.",
+    "hero_reveal": "Masked line-by-line reveal: Wrap lines in overflow-hidden divs, translate Y from 100% to 0% with Framer Motion (ease: [0.76, 0, 0.24, 1], duration: 1).",
+    "parallax": "Use Framer Motion's useScroll and useTransform for subtle Y-axis shifts on images as the user scrolls.",
+    "marquee": "Slow editorial marquee for services. react-fast-marquee at speed 30. Use Manrope, transparent text with 1px text-stroke in Cadet Blue, or solid Deep Charcoal.",
+    "hover": "Portfolio cards: image scales up (scale-105) over 0.6s ease-out. Text remains static or arrow icon translates X."
+  },
+  "component_specs": {
+    "buttons": "Pill-shaped (rounded-full), Manrope SemiBold. Primary: Deep Charcoal bg, Warm White text. Hover: Cadet Blue bg.",
+    "navigation": "Fixed or sticky header. MUST HAVE SOLID OR BLURRED BACKGROUND. Do not use fully transparent header. bg-[#F7F9F8]/90 backdrop-blur-md.",
+    "contact_form": "Minimalist inputs. border-b only (border-cloud-grey), no background. Focus: border-cadet-blue. Select dropdown for 5 service categories.",
+    "footer": "Midnight Slate background. Warm White text. Massive typography for 'SB Creatives'."
+  },
+  "pages_blueprints": {
+    "Home": {
+      "Hero": "Kinetic typography, minimal imagery. Huge text 'Crafting Modern Brands'. Line-by-line reveal.",
+      "Marquee": "Edge-to-edge slow marquee of service categories.",
+      "Selected_Work": "Asymmetric bento grid (col-span-12, varying sizes) of top 4 projects. Real photography.",
+      "Manifesto_Preview": "Numbered layout (01, 02, 03) highlighting approach. High contrast.",
+      "CTA": "Dark section (Midnight Slate) with massive link to contact."
+    },
+    "Services": {
+      "Layout": "List-based or accordion-style deep dive into the 5 categories (Brand & Creative, Digital & Web, etc.). Accompany with sleek icon or subtle circular image for each."
+    },
+    "Work": {
+      "Layout": "Full grid of case studies. Filterable by category. Subtle parallax on scroll."
+    },
+    "About": {
+      "Layout": "The Manifesto. Numbered chapters. Typography heavy. Generous whitespace, photos of the agency or abstract creative moments."
+    },
+    "Contact": {
+      "Layout": "Split screen. Left: Huge text 'Let's Talk', contact info (hello@sbcreatives.in). Right: Minimalist form with Select for service."
+    }
+  },
+  "media_and_3d": {
+    "photography_style": "Real product photography treated deliberately. Use clipped frames and spotlight effects. Do not use generic corporate stock.",
+    "3d_moments": "Subtle 3D hero moment or floating elements (react-three-fiber or purely css/framer-motion parallax) to elevate the 'creative' vibe."
+  },
+  "image_urls": {
+    "portfolio": [
+      {
+        "project": "On Cloud / PUMA SpeedCat",
+        "url": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBydW5uaW5nJTIwc2hvZXMlMjBmb290d2VhciUyMHBob3RvZ3JhcGh5fGVufDB8fHx8MTc4NDg4NDQ1Mnww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "project": "Al Hilal x PUMA / NOX Dubai",
+        "url": "https://images.pexels.com/photos/13068364/pexels-photo-13068364.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "project": "Zafran Bistro / Carluccios",
+        "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBiaXN0cm8lMjBpdGFsaWFuJTIwcmVzdGF1cmFudCUyMGludGVyaW9yfGVufDB8fHx8MTc4NDg4NDQ2M3ww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "project": "Geely Auto",
+        "url": "https://images.pexels.com/photos/18320398/pexels-photo-18320398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "project": "Refine Skincare",
+        "url": "https://images.pexels.com/photos/34159010/pexels-photo-34159010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "project": "Blu Chocolates",
+        "url": "https://images.pexels.com/photos/66234/praline-chocolates-chocolate-chocolatier-66234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      }
+    ]
+  },
+  "accessibility": {
+    "guidelines": "Ensure high contrast. Use semantic HTML. Support keyboard navigation.",
+    "testing": "All interactive and key informational elements MUST include a `data-testid` attribute (e.g., `data-testid='nav-home'`, `data-testid='portfolio-card-1'`, `data-testid='submit-btn'`)."
+  },
+  "instructions_to_main_agent": [
+    "Read this JSON carefully.",
+    "Ensure all components and views are implemented using Javascript (.js or .jsx), NOT Typescript, as this is a JS codebase.",
+    "Setup Tailwind CSS with the specified custom color variables in tailwind.config.js.",
+    "Implement Lenis for smooth scrolling in a top-level wrapper component.",
+    "Implement Framer Motion for the kinetic line-by-line reveal on the Hero sections.",
+    "Use react-fast-marquee for the text marquee.",
+    "Build the 5 pages (Home, Services, Work, About, Contact) using React Router.",
+    "Do NOT use completely transparent backgrounds on headers. Use backdrop-blur with a solid fallback color (like bg-[#F7F9F8]/90).",
+    "Ensure the contact form contains a Select dropdown for the 5 service categories. Create a lightweight FastAPI backend for this form and connect it.",
+    "Do NOT use raw HTML elements for complex interactive parts; customize Shadcn UI components (like Select, Form, etc.) but strip out any generic 'Vercel-look' styling to match the agency's premium minimal aesthetic.",
+    "Use lucide-react for any icons."
+  ],
+  "universal_guidelines": [
+    "Never use generic AI-generated aesthetic (no blue gradients, centered boring layouts).",
+    "Use asymmetrical grids where possible.",
+    "Every interaction needs micro-animations.",
+    "No universal transition: all.",
+    "Use 2-3x more spacing (p-12, p-24) than feels comfortable.",
+    "Include data-testid on every interactive element."
+  ]
+}
