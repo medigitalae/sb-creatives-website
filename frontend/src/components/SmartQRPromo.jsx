@@ -44,7 +44,7 @@ export default function SmartQRPromo() {
           <div>
             <FadeUp>
               <img 
-                src="/services/smart-qr-biz/logo-smartqrbiz.svg" 
+                src="/services/smart-qr-biz/logo-smartqrbiz-white.svg" 
                 alt="Smart QR Biz" 
                 className="h-10 w-auto mb-8"
               />
