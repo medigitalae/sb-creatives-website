@@ -1,12 +1,19 @@
 import { useParams, Navigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Check, ArrowUpRight } from "lucide-react";
+import { Check, ArrowUpRight, Layers, Droplet, Zap, Maximize } from "lucide-react";
 import { PageHero, DarkCTA } from "../components/Sections";
 import { FadeUp } from "../components/Reveal";
 import ServiceIllustration from "../components/ServiceIllustration";
 import RelatedWork from "../components/RelatedWork";
 import { getService, SERVICES, OFFERING_IMAGES } from "../content/services";
 import SEO from "../components/SEO";
+
+const ICON_MAP = {
+  Layers: Layers,
+  Droplet: Droplet,
+  Zap: Zap,
+  Maximize: Maximize
+};
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -50,6 +57,48 @@ export default function ServiceDetail() {
           </FadeUp>
         </div>
       </section>
+
+      {/* Technologies Section (conditionally rendered) */}
+      {service.technologies && (
+        <section className="py-16 md:py-24 bg-cloud/20 border-t border-b border-cloud">
+          <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16">
+            <FadeUp>
+              <div className="max-w-3xl mb-16">
+                <h2 className="font-heading font-bold tracking-tight text-charcoal text-3xl md:text-4xl mb-6">Our 3D Printing Arsenal</h2>
+                <p className="text-graphite text-lg leading-relaxed">{service.technologyIntro}</p>
+              </div>
+            </FadeUp>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {service.technologies.map((tech, i) => {
+                const Icon = ICON_MAP[tech.icon] || Check;
+                return (
+                  <FadeUp key={tech.name} delay={i * 0.1}>
+                    <div className="h-full bg-white rounded-2xl border border-cloud p-8 transition-shadow duration-300 hover:shadow-lg hover:border-cadet/30">
+                      <div className="h-12 w-12 rounded-xl bg-seafoam/40 flex items-center justify-center text-ocean mb-6">
+                        <Icon size={24} />
+                      </div>
+                      <h3 className="font-heading font-bold text-charcoal text-xl mb-1">{tech.name}</h3>
+                      <p className="text-cadet font-medium text-sm tracking-wide mb-4">{tech.subtitle}</p>
+                      <p className="text-graphite text-[15px] leading-relaxed mb-6">{tech.body}</p>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <p className="text-xs font-bold uppercase tracking-wider text-charcoal mb-1">Why we love it</p>
+                          <p className="text-graphite text-sm leading-relaxed">{tech.love}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold uppercase tracking-wider text-charcoal mb-1">Perfect for</p>
+                          <p className="text-graphite text-sm leading-relaxed">{tech.perfect}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </FadeUp>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Offerings */}
       <section className="py-16 md:py-24 bg-warm">

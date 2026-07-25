@@ -258,6 +258,41 @@ export const SERVICES = [
       "How many pieces are needed?",
       "What file format or source object is available?",
     ],
+    technologyIntro: "Welcome to SB Creatives. We know that the Indian market moves fast, and bringing an idea from concept to physical reality needs to be just as quick—without compromising on quality. That's why we've equipped our studio with the industry's most versatile 3D printing technologies. Whether you are iterating a quick prototype, crafting a hyper-detailed architectural model, or building a massive retail display, here is how we make it happen:",
+    technologies: [
+      {
+        name: "Fused Deposition Modeling (FDM)",
+        subtitle: "The Dependable Workhorse",
+        icon: "Layers",
+        body: "Think of FDM as the reliable backbone of rapid prototyping. It works by melting and extruding durable plastics layer by layer to build your part from the ground up.",
+        love: "It is incredibly fast, highly cost-effective, and produces tough, functional parts that can take a beating.",
+        perfect: "Early-stage conceptual models, robust mechanical parts, and quick iterations when you need to physically test a design before committing to full-scale manufacturing."
+      },
+      {
+        name: "Stereolithography (SLA)",
+        subtitle: "Flawless Precision",
+        icon: "Droplet",
+        body: "If your project requires a glass-smooth finish and microscopic precision, SLA is the answer. Instead of melting plastic, this technology uses a precise laser to cure liquid resin into perfectly solid parts.",
+        love: "The surface quality is unmatched. It captures the finest textures, crisp edges, and intricate geometries that standard printers simply cannot handle.",
+        perfect: "High-end visual prototypes, detailed anatomical or architectural models, and intricate casting patterns."
+      },
+      {
+        name: "Selective Laser Sintering (SLS)",
+        subtitle: "Design Without Limits",
+        icon: "Zap",
+        body: "SLS is where engineering meets total creative freedom. It uses a high-powered laser to fuse small particles of polymer powder into a solid structure. The best part? The unfused powder actively supports your part as it prints, meaning you don't need to design around restrictive support structures.",
+        love: "You can print incredibly complex, interlocking parts fully assembled. It's ideal for producing highly durable, end-use parts with complex internal geometries.",
+        perfect: "Complex moving mechanisms, functional load-testing, and low-volume manufacturing of durable consumer goods."
+      },
+      {
+        name: "Large Format 3D Printing",
+        subtitle: "Thinking Big? So Are We.",
+        icon: "Maximize",
+        body: "Sometimes, standard build volumes just don't cut it. When you need to make a massive impact in a retail space or at an exhibition, our Large Format capabilities step in.",
+        love: "It breaks the size barrier. Instead of printing dozens of small pieces and meticulously gluing them together, we can print massive, seamless structures in one go.",
+        perfect: "Larger-than-life retail window displays, exhibition props, automotive prototyping, and bespoke interior furniture."
+      }
+    ],
     offerings: [
       {
         title: "Rapid Prototyping",
