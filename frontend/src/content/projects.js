@@ -268,8 +268,12 @@ export const PROJECTS = [
     tag: "Print system",
     excerpt:
       "Bilingual warranty and maintenance booklets designed for clarity, brand consistency and everyday ownership use.",
-    image: "https://images.pexels.com/photos/18320398/pexels-photo-18320398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
-    gallery: [],
+    image: "/works/geely/geely-hero.webp",
+    gallery: [
+      "/works/geely/1-large.webp",
+      "/works/geely/3-large.webp",
+      "/works/geely/10-large.webp",
+    ],
     services: ["Brand Application", "Print Graphics", "Bilingual Layout Design", "Production Artwork"],
     overview:
       "The project required warranty and maintenance booklets for Geely vehicles. The documents had to align with Geely's global brand identity while remaining practical for everyday use by vehicle owners and service teams.",
