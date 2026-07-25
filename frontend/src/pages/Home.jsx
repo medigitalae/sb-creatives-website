@@ -15,6 +15,7 @@ import { PROJECTS } from "../content/projects";
 import { HOME, HOW_WE_WORK, INDUSTRIES, STATS } from "../content/site";
 import SEO from "../components/SEO";
 import { INSIGHTS } from "../content/insights";
+import SmartQRPromo from "../components/SmartQRPromo";
 
 const EASE = [0.76, 0, 0.24, 1];
 
@@ -365,6 +366,7 @@ export default function Home() {
       <HowWeWork />
       <Integrated />
       <InsightsPreview />
+      <SmartQRPromo />
       <DarkCTA
         title="Have an idea, brief or business challenge?"
         body={HOME.finalCtaBody}

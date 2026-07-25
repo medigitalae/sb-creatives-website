@@ -7,6 +7,7 @@ import ServiceIllustration from "../components/ServiceIllustration";
 import RelatedWork from "../components/RelatedWork";
 import { getService, SERVICES, OFFERING_IMAGES } from "../content/services";
 import SEO from "../components/SEO";
+import SmartQRPromo from "../components/SmartQRPromo";
 
 const ICON_MAP = {
   Layers: Layers,
@@ -198,6 +199,9 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {/* Conditionally render Smart QR Promo for the Printing & Merchandise page */}
+      {service.slug === "printing-merchandise" && <SmartQRPromo />}
 
       {/* Related work for this service */}
       <RelatedWork serviceSlug={service.slug} eyebrow="Related work" title="Selected work in this service" />

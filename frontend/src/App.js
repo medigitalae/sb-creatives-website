@@ -19,6 +19,7 @@ import Contact from "@/pages/Contact";
 import Legal from "@/pages/Legal";
 import NotFound from "@/pages/NotFound";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import SmartQR from "@/pages/SmartQR";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -53,6 +54,7 @@ function AnimatedRoutes() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<Legal type="privacy" />} />
           <Route path="/terms" element={<Legal type="terms" />} />
+          <Route path="/smart-qr-biz" element={<SmartQR />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>
