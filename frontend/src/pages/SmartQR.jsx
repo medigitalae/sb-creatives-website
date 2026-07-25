@@ -66,9 +66,9 @@ export default function SmartQR() {
       </section>
 
       {/* Design Showcase */}
-      <section className="py-24 md:py-32 bg-cloud/30">
+      <section className="py-24 md:py-32 bg-cloud/30 overflow-hidden relative">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
             <div>
               <FadeUp>
                 <h2 className="font-heading font-extrabold text-charcoal text-4xl md:text-5xl tracking-tight leading-[1.1] mb-6">
@@ -93,11 +93,15 @@ export default function SmartQR() {
                 </ul>
               </FadeUp>
             </div>
-            <FadeUp delay={0.2}>
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-cloud shadow-lg">
-                <img src="/services/smart-qr-biz/cards-falling-hero.webp" alt="Smart QR Physical and Digital Cards" className="absolute inset-0 h-full w-full object-cover" />
-              </div>
+            
+            <FadeUp delay={0.2} className="relative flex items-center justify-center lg:justify-end">
+              <img 
+                src="/services/smart-qr-biz/cards-falling-hero.webp" 
+                alt="Smart QR Physical and Digital Cards" 
+                className="w-full max-w-md lg:max-w-none h-auto lg:scale-[1.35] lg:origin-right object-contain drop-shadow-2xl" 
+              />
             </FadeUp>
+
           </div>
         </div>
       </section>
