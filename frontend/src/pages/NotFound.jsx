@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import SEO from "../components/SEO";
+import { FadeUp } from "../components/Reveal";
+
+const EASE = [0.76, 0, 0.24, 1];
 
 export default function NotFound() {
   return (
@@ -12,28 +15,43 @@ export default function NotFound() {
       />
       
       <section className="relative overflow-hidden pt-40 pb-24 md:pb-32 min-h-[80vh] flex flex-col justify-center">
-        {/* Same colored gradient section as Contact */}
         <div className="pointer-events-none absolute -top-10 -left-10 h-80 w-80 rounded-full bg-seafoam/40 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-cadet/10 blur-[100px]" />
 
         <div className="relative mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              >
+              
+              <FadeUp>
                 <p className="text-xs font-medium tracking-[0.2em] uppercase text-cadet mb-6">
                   404 Error
                 </p>
-                <h1 className="font-heading font-extrabold tracking-tighter text-charcoal text-5xl md:text-7xl leading-[0.92] mb-6">
-                  <span className="block bg-gradient-to-r from-cadet via-ocean to-cadet bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+              </FadeUp>
+
+              <h1 className="font-heading font-extrabold tracking-tighter text-charcoal text-5xl md:text-7xl leading-[0.92] mb-6">
+                <span className="block overflow-hidden pb-[0.12em]">
+                  <motion.span
+                    className="block bg-gradient-to-r from-cadet via-ocean to-cadet bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+                    initial={{ y: "110%" }}
+                    animate={{ y: "0%" }}
+                    transition={{ duration: 1, ease: EASE, delay: 0 }}
+                  >
                     Looks like this idea
-                  </span>
-                  <span className="block text-charcoal">hasn't been built yet.</span>
-                </h1>
-                
+                  </motion.span>
+                </span>
+                <span className="block overflow-hidden pb-[0.12em]">
+                  <motion.span
+                    className="block text-charcoal"
+                    initial={{ y: "110%" }}
+                    animate={{ y: "0%" }}
+                    transition={{ duration: 1, ease: EASE, delay: 0.12 }}
+                  >
+                    hasn't been built yet.
+                  </motion.span>
+                </span>
+              </h1>
+              
+              <FadeUp delay={0.3}>
                 <p className="mt-8 text-graphite text-lg leading-relaxed max-w-md mb-12">
                   The page you're looking for doesn't exist, has been moved, or is temporarily unavailable. 
                   Let's get you back to something that does exist.
@@ -46,7 +64,8 @@ export default function NotFound() {
                   <ArrowLeft size={16} />
                   Return Home
                 </Link>
-              </motion.div>
+              </FadeUp>
+
             </div>
           </div>
         </div>
