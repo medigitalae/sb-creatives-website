@@ -63,8 +63,8 @@ function DarkHero() {
     >
       {/* Grid lines */}
       <div className="absolute inset-0 hero-grid" />
-      {/* Moving gradient blobs */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {/* Moving gradient blobs - Hidden on mobile for performance */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden hidden md:block">
         <div className="blob-1 absolute top-[-10%] right-[5%] h-[500px] w-[500px] rounded-full bg-cadet/25 blur-[120px]" />
         <div className="blob-2 absolute bottom-[-15%] left-[-5%] h-[460px] w-[460px] rounded-full bg-ocean/25 blur-[120px]" />
         <div className="absolute top-[30%] left-[40%] h-[300px] w-[300px] rounded-full bg-seafoam/10 blur-[100px]" />

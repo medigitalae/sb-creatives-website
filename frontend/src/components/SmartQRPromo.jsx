@@ -29,8 +29,10 @@ export default function SmartQRPromo() {
   return (
     <section className="relative overflow-hidden pt-16 md:pt-24 bg-midnight text-warm grain">
       {/* Background glowing orbs */}
-      <div className="pointer-events-none absolute -top-40 right-10 h-[500px] w-[500px] rounded-full bg-cadet/20 blur-[100px]" />
-      <div className="pointer-events-none absolute -bottom-40 -left-20 h-[600px] w-[600px] rounded-full bg-ocean/20 blur-[120px]" />
+      <div className="hidden md:block">
+        <div className="pointer-events-none absolute -top-40 right-10 h-[500px] w-[500px] rounded-full bg-cadet/20 blur-[100px]" />
+        <div className="pointer-events-none absolute -bottom-40 -left-20 h-[600px] w-[600px] rounded-full bg-ocean/20 blur-[120px]" />
+      </div>
 
       <div className="relative mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-end">

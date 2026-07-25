@@ -107,3 +107,10 @@ html.lenis, html.lenis body { height: auto; }
     pointer-events: none;
     mix-blend-mode: overlay;
 }
+
+/* Disable expensive SVG filters on mobile for better performance */
+@media (max-width: 768px) {
+    .grain::before {
+        display: none;
+    }
+}
