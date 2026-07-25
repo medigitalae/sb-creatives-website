@@ -258,7 +258,7 @@ export const SERVICES = [
       "How many pieces are needed?",
       "What file format or source object is available?",
     ],
-    technologyIntro: "Welcome to SB Creatives. We know that the Indian market moves fast, and bringing an idea from concept to physical reality needs to be just as quick—without compromising on quality. That's why we've equipped our studio with the industry's most versatile 3D printing technologies. Whether you are iterating a quick prototype, crafting a hyper-detailed architectural model, or building a massive retail display, here is how we make it happen:",
+    technologyIntro: "Moving from a digital concept to a physical object requires speed, precision, and the right tools. Our studio is equipped with versatile 3D printing technologies to handle everything from rapid prototyping to massive retail displays.",
     technologies: [
       {
         name: "Fused Deposition Modeling (FDM)",
