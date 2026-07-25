@@ -46,7 +46,7 @@ export default function SmartQRPromo() {
             </FadeUp>
 
             <FadeUp delay={0.1}>
-              <h2 className="font-heading font-extrabold tracking-tighter text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-6">
+              <h2 className="font-heading font-extrabold tracking-tight text-4xl md:text-5xl leading-[1.1] mb-6">
                 The Future of Networking: <br className="hidden lg:block"/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cadet via-ocean to-seafoam">Smart Digital Business Cards</span>
               </h2>
