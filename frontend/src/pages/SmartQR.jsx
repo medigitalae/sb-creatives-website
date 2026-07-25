@@ -109,8 +109,12 @@ export default function SmartQR() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
             <FadeUp className="order-2 lg:order-1">
-              <div className="relative aspect-video rounded-3xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl p-4 md:p-8 flex items-center justify-center">
-                <img src="/services/smart-qr-biz/analytics.webp" alt="Smart QR Biz Dashboard" className="rounded-xl shadow-lg border border-white/20 max-w-full max-h-full object-contain" />
+              <div className="relative flex items-center justify-center">
+                <img 
+                  src="/services/smart-qr-biz/analytics.webp" 
+                  alt="Smart QR Biz Dashboard" 
+                  className="w-full h-auto max-w-2xl object-contain drop-shadow-2xl" 
+                />
               </div>
             </FadeUp>
 
