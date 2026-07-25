@@ -63,7 +63,7 @@ export default function SmartQRPromo() {
                       <feature.icon size={14} />
                     </div>
                     <div>
-                      <h4 className="font-heading font-bold text-sm text-white mb-1">{feature.title}</h4>
+                      <h3 className="font-heading font-bold text-sm text-white mb-1">{feature.title}</h3>
                       <p className="text-cloud/60 text-xs leading-relaxed max-w-[14rem]">{feature.desc}</p>
                     </div>
                   </div>
