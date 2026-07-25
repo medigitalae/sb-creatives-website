@@ -20,11 +20,11 @@ export default function NotFound() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10"
       >
-        <h1 className="font-heading font-extrabold text-[12rem] md:text-[18rem] leading-none text-charcoal tracking-tighter">
+        <h1 className="font-heading font-extrabold text-[12rem] md:text-[18rem] leading-none tracking-tighter bg-gradient-to-r from-cadet via-ocean to-cadet bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient mb-4 md:mb-8">
           404
         </h1>
         
-        <div className="-mt-8 md:-mt-12">
+        <div>
           <h2 className="font-heading font-bold text-2xl md:text-3xl text-charcoal mb-4">
             Looks like this idea hasn't been built yet.
           </h2>
