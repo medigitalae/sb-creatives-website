@@ -5,42 +5,52 @@ import SEO from "../components/SEO";
 
 export default function NotFound() {
   return (
-    <div data-testid="not-found-page" className="min-h-[80vh] bg-warm flex flex-col items-center justify-center px-6 text-center relative overflow-hidden">
+    <div data-testid="not-found-page" className="bg-warm min-h-screen">
       <SEO 
         title="Page Not Found — SB Creatives" 
         description="The page you are looking for does not exist or has been moved." 
       />
       
-      {/* Decorative background element */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cadet/5 rounded-full blur-[120px]" />
+      <section className="relative overflow-hidden pt-40 pb-24 md:pb-32 min-h-[80vh] flex flex-col justify-center">
+        {/* Same colored gradient section as Contact */}
+        <div className="pointer-events-none absolute -top-10 -left-10 h-80 w-80 rounded-full bg-seafoam/40 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-cadet/10 blur-[100px]" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10"
-      >
-        <h1 className="font-heading font-extrabold text-[12rem] md:text-[18rem] leading-none tracking-tighter bg-gradient-to-r from-cadet via-ocean to-cadet bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient mb-4 md:mb-8">
-          404
-        </h1>
-        
-        <div>
-          <h2 className="font-heading font-bold text-2xl md:text-3xl text-charcoal mb-4">
-            Looks like this idea hasn't been built yet.
-          </h2>
-          <p className="text-graphite text-lg max-w-md mx-auto mb-10">
-            The page you're looking for doesn't exist, has been moved, or is temporarily unavailable.
-          </p>
-          
-          <Link 
-            to="/" 
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-charcoal px-8 py-4 text-sm font-semibold text-warm transition-all duration-300 hover:bg-cadet hover:-translate-y-1 hover:shadow-lg"
-          >
-            <ArrowLeft size={16} />
-            Return Home
-          </Link>
+        <div className="relative mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <p className="text-xs font-medium tracking-[0.2em] uppercase text-cadet mb-6">
+                  404 Error
+                </p>
+                <h1 className="font-heading font-extrabold tracking-tighter text-charcoal text-5xl md:text-7xl leading-[0.92] mb-6">
+                  <span className="block bg-gradient-to-r from-cadet via-ocean to-cadet bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+                    Looks like this idea
+                  </span>
+                  <span className="block text-charcoal">hasn't been built yet.</span>
+                </h1>
+                
+                <p className="mt-8 text-graphite text-lg leading-relaxed max-w-md mb-12">
+                  The page you're looking for doesn't exist, has been moved, or is temporarily unavailable. 
+                  Let's get you back to something that does exist.
+                </p>
+                
+                <Link 
+                  to="/" 
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-charcoal px-8 py-4 text-sm font-semibold text-warm transition-all duration-300 hover:bg-cadet hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <ArrowLeft size={16} />
+                  Return Home
+                </Link>
+              </motion.div>
+            </div>
+          </div>
         </div>
-      </motion.div>
+      </section>
     </div>
   );
 }
