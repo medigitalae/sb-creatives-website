@@ -201,7 +201,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* Conditionally render Smart QR Promo for the Printing & Merchandise page */}
-      {service.slug === "printing-merchandise" && <SmartQRPromo />}
+      {service.slug === "print-merchandise" && <SmartQRPromo />}
 
       {/* Related work for this service */}
       <RelatedWork serviceSlug={service.slug} eyebrow="Related work" title="Selected work in this service" />
