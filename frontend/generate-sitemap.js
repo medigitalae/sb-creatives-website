@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DOMAIN = 'https://sb-creatives.in';
+const DOMAIN = 'https://sbcreatives.in';
 
 function extractSlugs(filePath) {
   const fullPath = path.join(__dirname, filePath);
