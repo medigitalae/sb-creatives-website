@@ -1,6 +1,29 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Smartphone, Globe, Download, Users, LineChart } from "lucide-react";
 import { FadeUp } from "./Reveal";
+
+const features = [
+  {
+    title: "Instant Sharing",
+    desc: "Share your complete digital profile instantly with a simple NFC tap.",
+    icon: Smartphone,
+  },
+  {
+    title: "Frictionless Experience",
+    desc: "The profile opens instantly in the browser, no app required.",
+    icon: Globe,
+  },
+  {
+    title: "One-Click Save",
+    desc: "Contacts can download your details as a rich vCard.",
+    icon: Download,
+  },
+  {
+    title: "Actionable Analytics",
+    desc: "Track card views, saves, and leads through a dashboard.",
+    icon: LineChart,
+  },
+];
 
 export default function SmartQRPromo() {
   return (
@@ -27,11 +50,26 @@ export default function SmartQRPromo() {
                 The Future of Networking: <br className="hidden lg:block"/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cadet via-ocean to-seafoam">Smart Digital Business Cards</span>
               </h2>
-              <p className="text-xl text-ocean font-medium mb-6">One Tap. Endless Connections.</p>
               <p className="text-cloud/80 text-lg leading-relaxed mb-10 max-w-xl">
-                Make a lasting first impression with Smart QR Biz, a premium NFC and QR business card system built for professionals, sales teams, and organizations. Our digital business cards eliminate paper waste and turn every handshake into a measurable connection.
+                Make a lasting first impression with Smart QR Biz, a premium NFC and QR business card system built for professionals, sales teams, and organizations.
               </p>
             </FadeUp>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 mb-12">
+              {features.map((feature, i) => (
+                <FadeUp key={feature.title} delay={0.2 + i * 0.1}>
+                  <div className="flex items-start gap-4">
+                    <div className="mt-0.5 flex-shrink-0 h-8 w-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-seafoam">
+                      <feature.icon size={14} />
+                    </div>
+                    <div>
+                      <h4 className="font-heading font-bold text-sm text-white mb-1">{feature.title}</h4>
+                      <p className="text-cloud/60 text-xs leading-relaxed max-w-[14rem]">{feature.desc}</p>
+                    </div>
+                  </div>
+                </FadeUp>
+              ))}
+            </div>
 
             <FadeUp delay={0.2}>
               <Link
