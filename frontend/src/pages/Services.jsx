@@ -4,10 +4,15 @@ import { PageHero, DarkCTA } from "../components/Sections";
 import { FadeUp } from "../components/Reveal";
 import ServiceIllustration from "../components/ServiceIllustration";
 import { SERVICES } from "../content/services";
+import SEO from "../components/SEO";
 
 export default function Services() {
   return (
     <div data-testid="services-page">
+      <SEO 
+        title="Our Services — SB Creatives" 
+        description="Explore our services including Brand & Creative, Digital & Web, Retail & Spatial Design, Print & Merchandise, and 3D Printing Solutions." 
+      />
       <PageHero
         eyebrow="Services"
         lines={["Connected capabilities", "for brands that need"]}

@@ -3,6 +3,7 @@ import { PageHero, DarkCTA } from "../components/Sections";
 import { FadeUp } from "../components/Reveal";
 import ProjectCard from "../components/ProjectCard";
 import { PROJECTS, WORK_FILTERS } from "../content/projects";
+import SEO from "../components/SEO";
 
 export default function Work() {
   const [active, setActive] = useState("All Work");
@@ -14,6 +15,10 @@ export default function Work() {
 
   return (
     <div data-testid="work-page">
+      <SEO 
+        title="Our Work & Projects — SB Creatives" 
+        description="Browse our portfolio of brand applications, digital transformations, and retail environments for ambitious businesses." 
+      />
       <PageHero
         eyebrow="Selected work"
         lines={["Work shaped around", "real business and"]}

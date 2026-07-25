@@ -17,6 +17,8 @@ import Article from "@/pages/Article";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Legal from "@/pages/Legal";
+import NotFound from "@/pages/NotFound";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -51,6 +53,7 @@ function AnimatedRoutes() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<Legal type="privacy" />} />
           <Route path="/terms" element={<Legal type="terms" />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
@@ -60,17 +63,19 @@ function AnimatedRoutes() {
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <SmoothScroll>
-          <ScrollProgress />
-          <Navbar />
-          <main>
-            <AnimatedRoutes />
-          </main>
-          <Footer />
-        </SmoothScroll>
-        <Toaster position="bottom-right" />
-      </BrowserRouter>
+      <ErrorBoundary>
+        <BrowserRouter>
+          <SmoothScroll>
+            <ScrollProgress />
+            <Navbar />
+            <main>
+              <AnimatedRoutes />
+            </main>
+            <Footer />
+          </SmoothScroll>
+          <Toaster position="bottom-right" />
+        </BrowserRouter>
+      </ErrorBoundary>
     </div>
   );
 }

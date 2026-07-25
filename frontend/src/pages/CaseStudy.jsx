@@ -6,6 +6,7 @@ import { FadeUp } from "../components/Reveal";
 import { DarkCTA } from "../components/Sections";
 import RelatedWork from "../components/RelatedWork";
 import { getProject, PROJECTS, FALLBACK_IMAGE } from "../content/projects";
+import SEO from "../components/SEO";
 
 export default function CaseStudy() {
   const { slug } = useParams();
@@ -21,6 +22,10 @@ export default function CaseStudy() {
 
   return (
     <div data-testid="case-study-page">
+      <SEO 
+        title={`${project.title} — SB Creatives Case Study`} 
+        description={project.summary || `Read the case study for ${project.title}, exploring our work in ${project.category}.`} 
+      />
       {/* Hero */}
       <section ref={heroRef} className="relative pt-32 md:pt-36 bg-warm">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16">

@@ -1,11 +1,16 @@
 import { PageHero } from "../components/Sections";
 import { FadeUp } from "../components/Reveal";
 import { LEGAL } from "../content/site";
+import SEO from "../components/SEO";
 
 export default function Legal({ type }) {
   const data = LEGAL[type];
   return (
     <div data-testid={`legal-${type}-page`} className="bg-warm">
+      <SEO 
+        title={`${data.title} — SB Creatives`} 
+        description={`Read our ${data.title.toLowerCase()} regarding our integrated creative and production services.`} 
+      />
       <PageHero eyebrow="Legal" lines={[data.title]} sub={data.intro} />
 
       <section className="pb-24 md:pb-32 bg-warm">

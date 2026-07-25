@@ -3,11 +3,16 @@ import { ArrowUpRight } from "lucide-react";
 import { PageHero, DarkCTA } from "../components/Sections";
 import { FadeUp } from "../components/Reveal";
 import { INSIGHTS } from "../content/insights";
+import SEO from "../components/SEO";
 
 export default function Insights() {
   const [featured, ...rest] = INSIGHTS;
   return (
     <div data-testid="insights-page">
+      <SEO 
+        title="Insights & Articles — SB Creatives" 
+        description="Practical articles on brand consistency, digital decisions, retail experiences and the way creative work moves from strategy into execution." 
+      />
       <PageHero
         eyebrow="Insights"
         lines={["Useful thinking for", "brands that want to"]}

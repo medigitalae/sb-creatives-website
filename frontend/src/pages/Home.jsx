@@ -13,6 +13,7 @@ import CircularText from "../components/CircularText";
 import { SERVICES } from "../content/services";
 import { PROJECTS } from "../content/projects";
 import { HOME, HOW_WE_WORK, INDUSTRIES, STATS } from "../content/site";
+import SEO from "../components/SEO";
 import { INSIGHTS } from "../content/insights";
 
 const EASE = [0.76, 0, 0.24, 1];
@@ -351,7 +352,11 @@ function InsightsPreview() {
 
 export default function Home() {
   return (
-    <div data-testid="home-page">
+    <div data-testid="home-page" className="bg-warm text-charcoal">
+      <SEO 
+        title="SB Creatives — Creative, Digital, Retail & Production Studio" 
+        description="Independent creative, digital and production company. We bring strategy, design, digital, web, retail and production together to help ambitious businesses create stronger brand experiences." 
+      />
       <DarkHero />
       <Marq />
       <Positioning />

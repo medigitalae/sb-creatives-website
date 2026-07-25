@@ -6,6 +6,7 @@ import { FadeUp } from "../components/Reveal";
 import ServiceIllustration from "../components/ServiceIllustration";
 import RelatedWork from "../components/RelatedWork";
 import { getService, SERVICES, OFFERING_IMAGES } from "../content/services";
+import SEO from "../components/SEO";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -16,6 +17,10 @@ export default function ServiceDetail() {
 
   return (
     <div data-testid="service-detail-page">
+      <SEO 
+        title={`${service.title} Services — SB Creatives`} 
+        description={service.heroBody || `Learn more about our ${service.title} services at SB Creatives.`} 
+      />
       <PageHero
         eyebrow={`Services · ${service.index}`}
         lines={[service.heroHeadline]}

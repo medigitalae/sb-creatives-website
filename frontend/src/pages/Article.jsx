@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { FadeUp } from "../components/Reveal";
 import { DarkCTA } from "../components/Sections";
 import { getArticle, INSIGHTS } from "../content/insights";
+import SEO from "../components/SEO";
 
 export default function Article() {
   const { slug } = useParams();
@@ -13,6 +14,10 @@ export default function Article() {
 
   return (
     <div data-testid="article-page">
+      <SEO 
+        title={`${article.title} — SB Creatives Insights`} 
+        description={article.excerpt || `Read our insight on ${article.title} by SB Creatives.`} 
+      />
       <section className="pt-32 md:pt-40 pb-8 bg-warm">
         <div className="mx-auto max-w-3xl px-6 md:px-8">
           <FadeUp>

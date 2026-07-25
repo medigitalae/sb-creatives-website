@@ -4,10 +4,15 @@ import { FadeUp } from "../components/Reveal";
 import CountUp from "../components/CountUp";
 import { ABOUT, STATS } from "../content/site";
 import { SERVICES } from "../content/services";
+import SEO from "../components/SEO";
 
 export default function About() {
   return (
     <div data-testid="about-page">
+      <SEO 
+        title="About Us — SB Creatives" 
+        description="Learn about SB Creatives. Ideas become stronger when every part of the process connects. Discover our integrated team and 12+ years of craft." 
+      />
       <PageHero
         eyebrow="The studio"
         lines={["Ideas become stronger", "when every part of the"]}

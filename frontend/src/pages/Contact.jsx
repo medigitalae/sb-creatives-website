@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import { toast } from "sonner";
 import { ArrowRight, Check, Mail, MapPin } from "lucide-react";
 import { RevealHeading, FadeUp } from "../components/Reveal";
@@ -12,9 +11,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CONTACT, CONTACT_OPTIONS } from "../content/site";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import SEO from "../components/SEO";
 
 const initial = {
   name: "",
@@ -62,7 +59,25 @@ export default function Contact() {
     }
     setSubmitting(true);
     try {
-      await axios.post(`${API}/contact`, form);
+      const res = await fetch("/contact.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form)
+      });
+      
+      let data;
+      try {
+        data = await res.json();
+      } catch (e) {
+        throw new Error("Server did not return valid JSON");
+      }
+      
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to send");
+      }
+      
       setDone(true);
       setForm(initial);
       toast.success("Thanks, your enquiry is with us.");
@@ -76,6 +91,10 @@ export default function Contact() {
 
   return (
     <div data-testid="contact-page" className="bg-warm">
+      <SEO 
+        title="Contact Us — SB Creatives" 
+        description="Get in touch with SB Creatives. Share your brief, business challenge, or early-stage idea with our integrated creative and production team." 
+      />
       <section className="relative overflow-hidden pt-40 pb-24 md:pb-32">
         <div className="pointer-events-none absolute -top-10 -left-10 h-80 w-80 rounded-full bg-seafoam/40 blur-3xl" />
         <div className="relative mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16">
