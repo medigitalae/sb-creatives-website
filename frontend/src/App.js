@@ -20,6 +20,7 @@ import Legal from "@/pages/Legal";
 import NotFound from "@/pages/NotFound";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import SmartQR from "@/pages/SmartQR";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -73,6 +74,7 @@ function App() {
             <main>
               <AnimatedRoutes />
             </main>
+            <FloatingWhatsApp />
             <Footer />
           </SmoothScroll>
           <Toaster position="bottom-right" />
