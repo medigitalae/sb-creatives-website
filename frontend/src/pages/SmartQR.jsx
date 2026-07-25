@@ -20,11 +20,27 @@ export default function SmartQR() {
       />
 
       {/* Hero Section */}
-      <PageHero
-        eyebrow="Proprietary Product"
-        lines={["A Complete Ecosystem", "for the Modern Professional"]}
-        sub="Paper cards get lost, details change, and traditional networking rarely provides trackable data. Under SB Creatives, we offer a complete digital business card ecosystem that combines premium physical card production with a powerful management platform."
-      />
+      <section className="relative overflow-hidden pt-40 pb-16 md:pb-24 bg-warm">
+        <div className="pointer-events-none absolute -top-10 right-10 h-72 w-72 rounded-full bg-seafoam/40 blur-3xl" />
+        <div className="pointer-events-none absolute top-40 -left-20 h-64 w-64 rounded-full bg-cadet/15 blur-3xl" />
+        <div className="relative mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16">
+          <FadeUp>
+            <img 
+              src="/services/smart-qr-biz/logo-smartqrbiz.svg" 
+              alt="Smart QR Biz" 
+              className="h-12 w-auto mb-8"
+            />
+          </FadeUp>
+          <h1 className="font-heading font-extrabold tracking-tighter text-charcoal text-5xl md:text-7xl leading-[0.95] max-w-5xl">
+            <RevealHeading lines={["A Complete Ecosystem", "for the Modern Professional"]} />
+          </h1>
+          <FadeUp delay={0.3}>
+            <p className="mt-8 max-w-2xl text-graphite text-lg md:text-xl leading-relaxed">
+              Paper cards get lost, details change, and traditional networking rarely provides trackable data. Under SB Creatives, we offer a complete digital business card ecosystem that combines premium physical card production with a powerful management platform.
+            </p>
+          </FadeUp>
+        </div>
+      </section>
 
       {/* Visual Process Flow */}
       <section className="py-24 bg-warm border-y border-cloud relative overflow-hidden">

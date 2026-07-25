@@ -362,11 +362,11 @@ export default function Home() {
       <Marq />
       <Positioning />
       <ServicesBlock />
+      <SmartQRPromo />
       <SelectedWork />
       <HowWeWork />
       <Integrated />
       <InsightsPreview />
-      <SmartQRPromo />
       <DarkCTA
         title="Have an idea, brief or business challenge?"
         body={HOME.finalCtaBody}

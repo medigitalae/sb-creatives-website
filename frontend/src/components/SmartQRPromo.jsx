@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Smartphone, Globe, Download, Users, LineChart } from "lucide-react";
+import { ArrowUpRight, Smartphone, Globe, Download, Users, LineChart } from "lucide-react";
 import { FadeUp } from "./Reveal";
 
 const features = [
@@ -46,7 +46,7 @@ export default function SmartQRPromo() {
               <img 
                 src="/services/smart-qr-biz/logo-smartqrbiz.svg" 
                 alt="Smart QR Biz" 
-                className="h-12 w-auto mb-8 invert opacity-90"
+                className="h-10 w-auto mb-8"
               />
             </FadeUp>
             
@@ -60,16 +60,16 @@ export default function SmartQRPromo() {
               </p>
             </FadeUp>
 
-            <div className="space-y-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 mb-12">
               {features.map((feature, i) => (
                 <FadeUp key={feature.title} delay={0.2 + i * 0.1}>
                   <div className="flex items-start gap-4">
-                    <div className="mt-1 flex-shrink-0 h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-seafoam">
-                      <feature.icon size={18} />
+                    <div className="mt-0.5 flex-shrink-0 h-8 w-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-seafoam">
+                      <feature.icon size={14} />
                     </div>
                     <div>
-                      <h4 className="font-heading font-bold text-lg text-white mb-1">{feature.title}</h4>
-                      <p className="text-cloud/70 text-[15px] leading-relaxed max-w-md">{feature.desc}</p>
+                      <h4 className="font-heading font-bold text-base text-white mb-1">{feature.title}</h4>
+                      <p className="text-cloud/70 text-sm leading-relaxed max-w-sm">{feature.desc}</p>
                     </div>
                   </div>
                 </FadeUp>
@@ -79,10 +79,10 @@ export default function SmartQRPromo() {
             <FadeUp delay={0.6}>
               <Link 
                 to="/smart-qr-biz" 
-                className="inline-flex items-center gap-3 rounded-full bg-seafoam text-midnight px-8 py-4 font-semibold hover:bg-white transition-colors duration-300"
+                className="group inline-flex items-center gap-3 rounded-full bg-cadet px-8 py-5 text-base font-heading font-semibold text-midnight transition-colors duration-300 hover:bg-warm whitespace-nowrap"
               >
                 Explore Smart QR Biz
-                <ArrowRight size={18} />
+                <ArrowUpRight size={20} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
             </FadeUp>
           </div>
