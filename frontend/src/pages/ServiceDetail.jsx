@@ -68,29 +68,49 @@ export default function ServiceDetail() {
                 <p className="text-graphite text-lg leading-relaxed">{service.technologyIntro}</p>
               </div>
             </FadeUp>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="space-y-0">
               {service.technologies.map((tech, i) => {
                 const Icon = ICON_MAP[tech.icon] || Check;
                 return (
-                  <FadeUp key={tech.name} delay={i * 0.1}>
-                    <div className="h-full bg-white rounded-2xl border border-cloud p-8 transition-shadow duration-300 hover:shadow-lg hover:border-cadet/30">
-                      <div className="h-12 w-12 rounded-xl bg-seafoam/40 flex items-center justify-center text-ocean mb-6">
-                        <Icon size={24} />
-                      </div>
-                      <h3 className="font-heading font-bold text-charcoal text-xl mb-1">{tech.name}</h3>
-                      <p className="text-cadet font-medium text-sm tracking-wide mb-4">{tech.subtitle}</p>
-                      <p className="text-graphite text-[15px] leading-relaxed mb-6">{tech.body}</p>
+                  <FadeUp key={tech.name} delay={0.1}>
+                    <div className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start border-t border-cloud py-12 md:py-16 transition-colors duration-500 hover:bg-white/40 -mx-6 px-6 md:-mx-12 md:px-12 lg:-mx-16 lg:px-16">
                       
-                      <div className="space-y-4">
-                        <div>
-                          <p className="text-xs font-bold uppercase tracking-wider text-charcoal mb-1">Why we love it</p>
-                          <p className="text-graphite text-sm leading-relaxed">{tech.love}</p>
+                      <div className="lg:col-span-4 flex flex-col gap-6">
+                        <div className="h-16 w-16 rounded-2xl bg-seafoam/40 flex items-center justify-center text-ocean shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:bg-ocean group-hover:text-seafoam">
+                          <Icon size={32} strokeWidth={1.5} />
                         </div>
                         <div>
-                          <p className="text-xs font-bold uppercase tracking-wider text-charcoal mb-1">Perfect for</p>
-                          <p className="text-graphite text-sm leading-relaxed">{tech.perfect}</p>
+                          <h3 className="font-heading font-extrabold text-charcoal text-2xl md:text-3xl mb-2 tracking-tight">{tech.name}</h3>
+                          <p className="text-cadet font-semibold tracking-wide text-sm uppercase">{tech.subtitle}</p>
                         </div>
                       </div>
+                      
+                      <div className="lg:col-span-8">
+                        <p className="text-charcoal text-lg md:text-xl leading-relaxed mb-10 font-medium">
+                          {tech.body}
+                        </p>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+                          <div className="relative pl-6 border-l-2 border-seafoam">
+                            <p className="text-xs font-bold uppercase tracking-wider text-ocean mb-3">
+                              Why we love it
+                            </p>
+                            <p className="text-graphite text-[15px] leading-relaxed">
+                              {tech.love}
+                            </p>
+                          </div>
+                          
+                          <div className="relative pl-6 border-l-2 border-cloud">
+                            <p className="text-xs font-bold uppercase tracking-wider text-charcoal mb-3">
+                              Perfect for
+                            </p>
+                            <p className="text-graphite text-[15px] leading-relaxed">
+                              {tech.perfect}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      
                     </div>
                   </FadeUp>
                 );
