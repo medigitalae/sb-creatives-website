@@ -1,14 +1,17 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  # Prevent Apache from redirecting physical directories to a trailing slash URL
+  
+  # Disable directory listing and content negotiation
+  Options -MultiViews -Indexes
+  
+  # Prevent Apache from automatically adding a trailing slash to directories
   DirectorySlash Off
 
   RewriteRule ^index\.html$ - [L]
   
-  # Only serve physical files directly (like images/css/js)
+  # If the requested path is not a physical file
   RewriteCond %{REQUEST_FILENAME} !-f
-  
-  # Send EVERYTHING else (including directory requests) to React Router
-  RewriteRule . /index.html [L]
+  # Send it to React Router (index.html)
+  RewriteRule ^ /index.html [QSA,L]
 </IfModule>
