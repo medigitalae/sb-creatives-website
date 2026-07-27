@@ -8,6 +8,9 @@
   # Prevent Apache from automatically adding a trailing slash to directories
   DirectorySlash Off
 
+  # Enforce non-trailing slash URLs for SEO (301 Redirect)
+  RewriteRule ^(.*)/$ /$1 [L,R=301]
+
   RewriteRule ^index\.html$ - [L]
   
   # If the requested path is not a physical file
