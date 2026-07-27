@@ -68,12 +68,12 @@ $emailBody .= "Budget: $budget\n";
 $emailBody .= "Timeline: $timeline\n\n";
 $emailBody .= "Message:\n$message\n";
 
-$headers = "From: noreply@sbcreatives.in\r\n";
+$headers = "From: SB Creatives Website <hello@sbcreatives.in>\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
-// Send email using SiteGround's native mail function
-$mailSent = mail($to, $subject, $emailBody, $headers);
+// Send email using native mail function with Envelope Sender (-f)
+$mailSent = mail($to, $subject, $emailBody, $headers, "-fhello@sbcreatives.in");
 
 if ($mailSent) {
     echo json_encode(["success" => true, "message" => "Enquiry sent successfully"]);
